@@ -1,4 +1,3 @@
-// utils/fileUpload.ts
 import { writeFile } from 'fs/promises';
 
 export async function saveFile(file: File): Promise<string> {
