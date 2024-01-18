@@ -1,0 +1,20 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "progresql"
+    url      = env("DATABASE_URL")
+}
+
+// SCORM Course Model
+model Course {
+  id            Int      @id @default(autoincrement())
+  title         String
+  description   String?
+  manifestPath  String   // Path to imsmanifest.xml file
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@map("courses")
+}
